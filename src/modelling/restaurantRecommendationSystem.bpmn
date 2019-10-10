@@ -15,23 +15,15 @@
         <bpmn:flowNodeRef>Task_139lrck</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0e3k8ov</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0ogptzp</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>EndEvent_1da9zuo</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0rwa8pi</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_16y5fc1" name="Manual">
         <bpmn:flowNodeRef>Task_0l73tia</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_1qlg549</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:task id="Task_0l73tia" name="Meal preparation">
-      <bpmn:incoming>SequenceFlow_1nnifsu</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0ahvdne</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="Task_1qlg549" name="Bring to table">
-      <bpmn:incoming>SequenceFlow_0ahvdne</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1hsako8</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:task id="Task_0nchfpd" name="Input desired meal parameters">
       <bpmn:incoming>SequenceFlow_0px89hc</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_0gns5o8</bpmn:incoming>
@@ -63,7 +55,7 @@
         <bpmn:targetRef>DataStoreReference_1ixht8r</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:task>
-    <bpmn:task id="Task_0ppb9kh" name="Recommender system">
+    <bpmn:task id="Task_0ppb9kh" name="Decision support system">
       <bpmn:outgoing>SequenceFlow_1t7msyc</bpmn:outgoing>
       <bpmn:property id="Property_1ou12b3" name="__targetRef_placeholder" />
       <bpmn:dataInputAssociation id="DataInputAssociation_0kfz8qe">
@@ -74,20 +66,9 @@
         <bpmn:targetRef>DataStoreReference_1ixht8r</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:task>
-    <bpmn:dataStoreReference id="DataStoreReference_1jxm7y1" />
     <bpmn:task id="Task_0ogptzp" name="Send receipt">
       <bpmn:incoming>SequenceFlow_0uxfxux</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_04ri8kd</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:endEvent id="EndEvent_1da9zuo">
-      <bpmn:incoming>SequenceFlow_04ri8kd</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:task id="Task_0rwa8pi" name="Payment">
-      <bpmn:incoming>SequenceFlow_1hsako8</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1c19mi7</bpmn:outgoing>
-      <bpmn:dataOutputAssociation id="DataOutputAssociation_0yglxfx">
-        <bpmn:targetRef>DataStoreReference_1jxm7y1</bpmn:targetRef>
-      </bpmn:dataOutputAssociation>
     </bpmn:task>
     <bpmn:startEvent id="StartEvent_1" name="Customer sitting at table">
       <bpmn:outgoing>SequenceFlow_0px89hc</bpmn:outgoing>
@@ -106,6 +87,25 @@
     <bpmn:sequenceFlow id="SequenceFlow_0uxfxux" sourceRef="Task_0e3k8ov" targetRef="Task_0ogptzp" />
     <bpmn:sequenceFlow id="SequenceFlow_04ri8kd" sourceRef="Task_0ogptzp" targetRef="EndEvent_1da9zuo" />
     <bpmn:sequenceFlow id="SequenceFlow_0ahvdne" sourceRef="Task_0l73tia" targetRef="Task_1qlg549" />
+    <bpmn:endEvent id="EndEvent_1da9zuo" name="Customer leaves">
+      <bpmn:incoming>SequenceFlow_04ri8kd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_0l73tia" name="Meal preparation">
+      <bpmn:incoming>SequenceFlow_1nnifsu</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ahvdne</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1qlg549" name="Bring to table">
+      <bpmn:incoming>SequenceFlow_0ahvdne</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1hsako8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0rwa8pi" name="Payment">
+      <bpmn:incoming>SequenceFlow_1hsako8</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1c19mi7</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0yglxfx">
+        <bpmn:targetRef>DataStoreReference_1jxm7y1</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:task>
+    <bpmn:dataStoreReference id="DataStoreReference_1jxm7y1" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_01cm7ih">
@@ -137,7 +137,7 @@
         <dc:Bounds x="790" y="347" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_0rwa8pi_di" bpmnElement="Task_0rwa8pi">
-        <dc:Bounds x="1320" y="347" width="100" height="80" />
+        <dc:Bounds x="1340" y="347" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="DataStoreReference_1ixht8r_di" bpmnElement="DataStoreReference_1ixht8r">
         <dc:Bounds x="810" y="165" width="50" height="50" />
@@ -149,16 +149,19 @@
         <dc:Bounds x="1650" y="347" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="DataStoreReference_1jxm7y1_di" bpmnElement="DataStoreReference_1jxm7y1">
-        <dc:Bounds x="1345" y="175" width="50" height="50" />
+        <dc:Bounds x="1365" y="175" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_1da9zuo_di" bpmnElement="EndEvent_1da9zuo">
-        <dc:Bounds x="1822" y="369" width="36" height="36" />
+        <dc:Bounds x="1802" y="369" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1779" y="412" width="83" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_0l73tia_di" bpmnElement="Task_0l73tia">
-        <dc:Bounds x="940" y="580" width="100" height="80" />
+        <dc:Bounds x="970" y="580" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_1qlg549_di" bpmnElement="Task_1qlg549">
-        <dc:Bounds x="1150" y="580" width="100" height="80" />
+        <dc:Bounds x="1140" y="580" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0px89hc_di" bpmnElement="SequenceFlow_0px89hc">
         <di:waypoint x="288" y="390" />
@@ -205,16 +208,16 @@
         <di:waypoint x="890" y="387" />
         <di:waypoint x="920" y="387" />
         <di:waypoint x="920" y="620" />
-        <di:waypoint x="940" y="620" />
+        <di:waypoint x="970" y="620" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1hsako8_di" bpmnElement="SequenceFlow_1hsako8">
-        <di:waypoint x="1250" y="620" />
+        <di:waypoint x="1240" y="620" />
         <di:waypoint x="1285" y="620" />
         <di:waypoint x="1285" y="387" />
-        <di:waypoint x="1320" y="387" />
+        <di:waypoint x="1340" y="387" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1c19mi7_di" bpmnElement="SequenceFlow_1c19mi7">
-        <di:waypoint x="1420" y="387" />
+        <di:waypoint x="1440" y="387" />
         <di:waypoint x="1485" y="387" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0uxfxux_di" bpmnElement="SequenceFlow_0uxfxux">
@@ -223,11 +226,11 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_04ri8kd_di" bpmnElement="SequenceFlow_04ri8kd">
         <di:waypoint x="1750" y="387" />
-        <di:waypoint x="1822" y="387" />
+        <di:waypoint x="1802" y="387" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0ahvdne_di" bpmnElement="SequenceFlow_0ahvdne">
-        <di:waypoint x="1040" y="620" />
-        <di:waypoint x="1150" y="620" />
+        <di:waypoint x="1070" y="620" />
+        <di:waypoint x="1140" y="620" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataInputAssociation_0kfz8qe_di" bpmnElement="DataInputAssociation_0kfz8qe">
         <di:waypoint x="810" y="190" />
@@ -242,8 +245,8 @@
         <di:waypoint x="840" y="215" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataOutputAssociation_0yglxfx_di" bpmnElement="DataOutputAssociation_0yglxfx">
-        <di:waypoint x="1370" y="347" />
-        <di:waypoint x="1370" y="225" />
+        <di:waypoint x="1390" y="347" />
+        <di:waypoint x="1390" y="225" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataOutputAssociation_1tbybqj_di" bpmnElement="DataOutputAssociation_1tbybqj">
         <di:waypoint x="1535" y="343" />
