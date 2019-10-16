@@ -38,7 +38,7 @@
     <bpmn:startEvent id="StartEvent_1" name="Guest Arrived">
       <bpmn:outgoing>SequenceFlow_1k5oxtt</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Task_0wj5ux8" name="Wellcome Guests">
+    <bpmn:task id="Task_0wj5ux8" name="Welcome Guests">
       <bpmn:incoming>SequenceFlow_1k5oxtt</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1rmqek7</bpmn:outgoing>
     </bpmn:task>
@@ -47,7 +47,7 @@
       <bpmn:outgoing>SequenceFlow_1x83wd8</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_0i86b7i</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1gzpj3z" name="Guest sent away">
+    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1gzpj3z" name="Guests sent away">
       <bpmn:incoming>SequenceFlow_1x83wd8</bpmn:incoming>
       <bpmn:messageEventDefinition messageRef="Message_1f5ixiz" />
     </bpmn:intermediateThrowEvent>
@@ -208,7 +208,7 @@
       <bpmndi:BPMNShape id="IntermediateThrowEvent_17ytlgh_di" bpmnElement="IntermediateThrowEvent_1gzpj3z">
         <dc:Bounds x="722" y="287" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="699" y="330" width="83" height="14" />
+          <dc:Bounds x="697" y="330" width="88" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1x83wd8_di" bpmnElement="SequenceFlow_1x83wd8">
