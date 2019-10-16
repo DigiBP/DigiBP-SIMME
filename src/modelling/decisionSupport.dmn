@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0bdwe1p" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
+  <decision id="Decision_0l6dofd" name="Decision 1">
+    <decisionTable id="decisionTable_1">
+      <input id="InputClause_1ctdfiw" label="Side Dish Choice">
+        <inputExpression id="LiteralExpression_1pnr9zu" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0gojyi1" label="Seasoning">
+        <inputExpression id="LiteralExpression_1iyi4vh" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0espxbl" label="Allergies">
+        <inputExpression id="LiteralExpression_04auuqg" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0rxgww9" label="Starter">
+        <inputExpression id="LiteralExpression_1f7nsi9" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Multiple Menu Recommendations (here single examples)" typeRef="string" />
+      <rule id="DecisionRule_02p52oh">
+        <inputEntry id="UnaryTests_0v6tj7u">
+          <text>Rice</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ka6iq7">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lvq8ut">
+          <text>peanut</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19uq5qw">
+          <text>salad</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04p960i">
+          <text>Avocado salad, Stuffed peppers with brown rice</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i8idna">
+        <inputEntry id="UnaryTests_0d0lyic">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gn8drl">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j6xtvw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gvkuk2">
+          <text>soup</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08tey7h">
+          <text>Pumpkin soup, blue trout with potatoes</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sau3gb">
+        <inputEntry id="UnaryTests_1p9ksez">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dggesl">
+          <text>no pepper</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qzt8qn">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ahm0pe">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ji4o1d">
+          <text>Mixed salad, lamb ragu with rigatoni</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pquv2n">
+        <inputEntry id="UnaryTests_0g4ta59">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1npz2f1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ud8ygw">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oaqt6v">
+          <text>none</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ecz7tb">
+          <text>Cordon bleu with spaetzle with onion gravy</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m01nib">
+        <inputEntry id="UnaryTests_1n2jfih">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bufsyw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17vc9gl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12v3jbe">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r7dxqv">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wb2gzg">
+        <inputEntry id="UnaryTests_16a8zr5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07lnik0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rt31ev">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gntss3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cn50vw">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
