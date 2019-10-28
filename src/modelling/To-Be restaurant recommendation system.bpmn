@@ -91,10 +91,16 @@
       <bpmn:incoming>SequenceFlow_0gns5o8</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_031zt6x</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_02tzpz9</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1mdpahm">
+        <bpmn:targetRef>DataStoreReference_1ixht8r</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:task>
     <bpmn:task id="Task_0k409w4" name="Load parameters from app">
       <bpmn:incoming>SequenceFlow_035xyfp</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1urzuix</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0tzqgjv">
+        <bpmn:targetRef>DataStoreReference_1ixht8r</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
     </bpmn:task>
     <bpmn:task id="Task_1i3uzbg" name="Show recommended meals">
       <bpmn:incoming>SequenceFlow_1b1uc1z</bpmn:incoming>
@@ -147,7 +153,7 @@
       </bpmn:dataOutputAssociation>
     </bpmn:task>
     <bpmn:sequenceFlow id="SequenceFlow_1or26d6" sourceRef="Task_17psvaw" targetRef="Task_1i3uzbg" />
-    <bpmn:dataStoreReference id="DataStoreReference_1ixht8r" name="Menu Data" />
+    <bpmn:dataStoreReference id="DataStoreReference_1ixht8r" name="Menu Database" />
   </bpmn:process>
   <bpmn:process id="Process_1udcm8a" isExecutable="false" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -182,7 +188,7 @@
       <bpmndi:BPMNShape id="DataStoreReference_1ixht8r_di" bpmnElement="DataStoreReference_1ixht8r">
         <dc:Bounds x="1040" y="345" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1038" y="322" width="54" height="14" />
+          <dc:Bounds x="1026" y="322" width="78" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_0e3k8ov_di" bpmnElement="Task_0e3k8ov">
@@ -391,6 +397,14 @@
       <bpmndi:BPMNEdge id="DataInputAssociation_0e8jgsp_di" bpmnElement="DataInputAssociation_0e8jgsp">
         <di:waypoint x="1040" y="360" />
         <di:waypoint x="780" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1mdpahm_di" bpmnElement="DataOutputAssociation_1mdpahm">
+        <di:waypoint x="560" y="543" />
+        <di:waypoint x="1040" y="382" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_0tzqgjv_di" bpmnElement="DataOutputAssociation_0tzqgjv">
+        <di:waypoint x="560" y="634" />
+        <di:waypoint x="1040" y="385" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
