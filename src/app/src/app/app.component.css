@@ -1,0 +1,12 @@
+.image{
+  height:40em;
+  background-size:cover;
+  width:auto;
+  background-image: url('../assets/mainpage_image.jpg');
+  background-position:50% 50%;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
