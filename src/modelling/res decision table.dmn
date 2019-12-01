@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0oedqvh" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
+  <decision id="Decision_1typ7uz" name="Decision 1">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="opening hours">
+        <inputExpression id="inputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_08roiqz" label="capacity">
+        <inputExpression id="LiteralExpression_1ly300l" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_189ljom" label="Menu(drinks)">
+        <inputExpression id="LiteralExpression_0jyoqk6" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0iyb5b7" label="Menu(meal)">
+        <inputExpression id="LiteralExpression_05av1vw" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_13pl579" label="Menu(dessert)">
+        <inputExpression id="LiteralExpression_098v0lc" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Reservation reply" typeRef="string" />
+      <rule id="DecisionRule_12ys7pj">
+        <inputEntry id="UnaryTests_0y0e7gy">
+          <text>12.00-23.00</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qz76aj">
+          <text>50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kci3kv">
+          <text>coke,sprite,fanta</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ggjo94">
+          <text>pasta,pizza, ravioli</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p2vzq5">
+          <text>ice cream</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1clhft4">
+          <text>need to check the availability</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1coo4br">
+        <inputEntry id="UnaryTests_1dgoxsk">
+          <text>11.00-22.00</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j40fbl">
+          <text>35</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0egfklr">
+          <text>coke,ice tea,fruit juice</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xb7yfa">
+          <text>steak, potato</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yf02zv">
+          <text>rasperry cake </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17qnt1i">
+          <text>have to find other option</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16q7nyh">
+        <inputEntry id="UnaryTests_164r8p9">
+          <text>18.00-23.00</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g2gpk7">
+          <text>60</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10gbfaj">
+          <text>wein, bier</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10ba0o4">
+          <text>quinoa with veg curry, pommes</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zxy6xg">
+          <text>nuss torten, chocalate</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qv0ovm">
+          <text>need to check the availability</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vo3lvb">
+        <inputEntry id="UnaryTests_0uq80dh">
+          <text>11.00-18.00</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wf1d45">
+          <text>30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z76xdt">
+          <text>fresh fruit juice</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xfar54">
+          <text>rice with chicken, speghatti</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ss0jmr">
+          <text>milk sweets</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01qk4zs">
+          <text>need to check the availability</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
