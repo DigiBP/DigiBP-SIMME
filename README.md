@@ -4,6 +4,9 @@ For any information please refer to the Wiki pages.
 
 https://github.com/DigiBP/DigiBP-SIMME/wiki
 
+- Deniz Tosoni
+- Amala Arockia
+- Gjonson Pjetri
 
 # DigiBP Camunda Template
 
