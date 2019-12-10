@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_11isrhn" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.4">
+  <decision id="Decision_08k17a7" name="Decision 1">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="opening hours">
+        <inputExpression id="inputExpression_1" typeRef="double">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_10ebbpx" label="drinks">
+        <inputExpression id="LiteralExpression_1b5wtb1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0b1b9g8" label="meal">
+        <inputExpression id="LiteralExpression_1nvmi97" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_039e021" label="dessert">
+        <inputExpression id="LiteralExpression_03enohl" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="output" typeRef="boolean" />
+      <rule id="DecisionRule_17zzzna">
+        <inputEntry id="UnaryTests_16viifj">
+          <text>[12.00..23.00]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k553w5">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x2ciue">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j3f6q0">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s7g4j5">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nvcx3f">
+        <inputEntry id="UnaryTests_0ee3j9a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06zfnu1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_193rmyw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ntht2o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sa2faa">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
